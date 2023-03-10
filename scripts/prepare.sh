@@ -4,7 +4,7 @@
 # privous git-clone data.
 #
 
-set -eu -o pipefail
+set -eu
 
 source $(CDPATH= cd -- "$(dirname -- ${0})" && pwd)/common.sh
 
@@ -34,3 +34,5 @@ if [[ "${PARAMS_DELETE_EXISTING}" == "true" ]]; then
 	phase "Deleting all contents of checkout-dir '${checkout_dir}'"
 	clean_dir ${checkout_dir} || true
 fi
+
+exit 0

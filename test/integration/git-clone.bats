@@ -36,7 +36,7 @@ mock_bin="${PWD}/test/mock/bin"
 
 	# should fail when the ssl-ca-directory is incomplete, in this case the ssl-ca-directory
 	# workspace does not contain the file configured in the PARAMS_CRT_FILENAME
-	run ${git_clone_sh}
+	run bash --posix ${git_clone_sh}
 	assert_failure
 
 	# creating the configured file on the workspace
@@ -44,6 +44,6 @@ mock_bin="${PWD}/test/mock/bin"
 	assert_success
 
 	# with all requriements in place the git-clone script succeeds
-	run ${git_clone_sh}
+	run bash --posix ${git_clone_sh}
 	assert_success
 }

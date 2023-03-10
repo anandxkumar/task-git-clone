@@ -13,7 +13,7 @@ export PARAMS_VERBOSE="true"
 	unset PARAMS_REVISION
 	unset WORKSPACES_OUTPUT_PATH
 
-	run ${prepare_sh}
+	run bash --posix ${prepare_sh}
 	assert_failure
 }
 
@@ -29,7 +29,7 @@ export PARAMS_VERBOSE="true"
 	assert_success
 
 	# without the required files in place, the script should fail informing what's missing
-	run ${prepare_sh}
+	run bash --posix ${prepare_sh}
 	assert_failure
 	assert_output --partial 'not found'
 
@@ -38,7 +38,7 @@ export PARAMS_VERBOSE="true"
 	assert_success
 
 	# running the prepare script to copy over the expected files
-	run ${prepare_sh}
+	run bash --posix ${prepare_sh}
 	assert_success
 
 	# asserting the exected files are on the user home directory
@@ -58,7 +58,7 @@ export PARAMS_VERBOSE="true"
 	assert_success
 
 	# without the required worksapce, the script should fail, showing what's missing
-	run ${prepare_sh}
+	run bash --posix ${prepare_sh}
 	assert_failure
 	assert_output --partial 'not found'
 
@@ -69,7 +69,7 @@ export PARAMS_VERBOSE="true"
 	assert_success
 
 	# making sure the prepare script returns success
-	run ${prepare_sh}
+	run bash --posix ${prepare_sh}
 	assert_success
 
 	# asserting the expected file is copied
@@ -90,7 +90,7 @@ export PARAMS_VERBOSE="true"
 	assert_success
 
 	# the prepare script should not return error
-	run ${prepare_sh}
+	run bash --posix ${prepare_sh}
 	assert_success
 
 	# asserting the output workspace is cleaned up, using find to confirm it's empty

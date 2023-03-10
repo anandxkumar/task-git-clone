@@ -104,3 +104,5 @@ clean_dir() {
 
 # making the shell verbose when the paramter is set
 [[ "${PARAMS_VERBOSE}" == "true" ]] && set -x
+
+return 0

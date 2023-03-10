@@ -4,7 +4,7 @@
 # based on the task parameters.
 #
 
-set -eu -o pipefail
+set -eu
 
 source $(CDPATH= cd -- "$(dirname -- ${0})" && pwd)/common.sh
 
