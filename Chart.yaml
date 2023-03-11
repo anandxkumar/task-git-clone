@@ -1,0 +1,16 @@
+apiVersion: v2
+name: git-clone
+version: 0.0.1
+description: |
+  These Tasks are Git tasks to work with repositories used by other tasks
+  in your Pipeline.
+
+  The git-clone Task will clone a repo from the provided url into the
+  output Workspace. By default the repo will be cloned into the root of
+  your Workspace. You can clone into a sub-directory by setting this Task's
+  SUBDIRECTORY param.
+
+  This Task also supports sparse checkouts. To perform a sparse checkout, pass
+  a list of comma separated directory patterns to this Task's
+  SPARSE_CHECKOUT_DIRECTORIES param.
+type: application
